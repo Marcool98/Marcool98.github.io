@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv>
+    <info_perso>
+        <nom>Marc LIU</nom>
+        <tel>07 69 93 99 87</tel>
+        <mail>liumarc98@gmail.com</mail>
+        <age>21 years old</age>
+        <adresse>9 rue du faubourg Saint-Denis, Paris, France</adresse>
+    </info_perso>
+    <metier>
+        <titre>DevOps Engineer in apprenticeship</titre>
+        <contrat>Apprenticeship contract</contrat>
+        <rythme>1 month in the company / 1 month at school</rythme>
+        <dispo>Immediate availability</dispo>
+    </metier>
+    <competences>
+        <hard>HTML, CSS, JavaScript, Semantic Web</hard>
+        <langues>French, English, Chinese</langues>
+        <soft>Rigorous, curious, and autonomous</soft>
+    </competences>
+    <linkedin>
+        <url>https://www.linkedin.com/in/marc-liu-702941236/</url>
+    </linkedin>
+    <interet>
+        <interet>Weightlifting, Video Games</interet>
+    </interet>
+</cv>

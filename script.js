@@ -1,33 +1,29 @@
-function changeLanguage(lang) {
-    const page = document.location.pathname.split('/').pop().split('.').shift();
-    const fileName = page === 'cv' ? 'cv.xml' : 'translations.xml';
-    const xsltFile = page === 'cv' ? 'cv.xsl' : 'transform.xsl';
+let langueActu = 'fr';
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', fileName, true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            const xmlString = xhr.responseText;
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(xmlString, 'application/xml');
+function afficheCV(langue = langueActu) {
+    var xmlFile = `cv_${langue}.xml`;
+    var xslFile = `cv_${langue}.xsl`;
 
-            if (xml.documentElement.nodeName === 'parsererror') {
-                console.error('Error parsing XML');
-                return;
-            }
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', xmlFile, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var xml = xhr.responseXML;
 
-            const xsltProcessor = new XSLTProcessor();
-            const xsl = new XMLHttpRequest();
-            xsl.open('GET', xsltFile, true);
+            var xsl = new XMLHttpRequest();
+            xsl.open('GET', xslFile, true);
             xsl.onreadystatechange = function () {
-                if (xsl.readyState === 4 && xsl.status === 200) {
-                    const xslImport = parser.parseFromString(xsl.responseText, 'application/xml');
-                    xsltProcessor.importStylesheet(xslImport);
-                    xsltProcessor.setParameter(null, "lang", lang);
+                if (xsl.readyState == 4 && xsl.status == 200) {
+                    var xslDoc = xsl.responseXML;
 
-                    const resultDocument = xsltProcessor.transformToFragment(xml, document);
-                    document.getElementById('content').innerHTML = "";
-                    document.getElementById('content').appendChild(resultDocument);
+                    var processor = new XSLTProcessor();
+                    processor.importStylesheet(xslDoc);
+                    var resultDocument = processor.transformToFragment(xml, document);
+
+                    history.pushState({page: 'cv', langue: langue}, 'CV de Marc LIU', `cv_${langue}`);
+
+                    document.body.innerHTML = '';
+                    document.body.appendChild(resultDocument);
                 }
             };
             xsl.send();
@@ -36,6 +32,64 @@ function changeLanguage(lang) {
     xhr.send();
 }
 
+function changeLang(langue) {
+    langueActu = langue;
+    history.pushState({page: 'home', langue: langue}, 'Portfolio de Marc LIU', `?langue=${langue}`);
+    chargePageAcc();
+}
+
+function chargePageAcc() {
+var titleText = {
+'fr': 'Portfolio de Marc LIU',
+'en': 'Marc LIU\'s Portfolio',
+'zh': '马克·刘的作品集'
+};
+var welcomeText = {
+'fr': 'Bienvenue sur mon portfolio. Cliquez ci-dessous pour afficher mon CV :',
+'en': 'Welcome to my portfolio. Click below to view my CV:',
+'zh': '欢迎访问我的作品集。点击下方查看我的简历：'
+};
+var buttonText = {
+'fr': 'Voir le CV',
+'en': 'View CV',
+'zh': '查看简历'
+};
+
+document.title = titleText[langueActu];
+    document.body.innerHTML = `
+        <div class="container">
+            <div class="drapeaux">
+                <img src="/images/france.png" alt="Français" onclick="changeLang('fr')">
+                <img src="/images/uk.png" alt="English" onclick="changeLang('en')">
+                <img src="/images/china.png" alt="中文" onclick="changeLang('zh')">
+            </div>
+            <h1>${titleText[langueActu]}</h1>
+            <p>${welcomeText[langueActu]}</p>
+            <button onclick="afficheCV()">${buttonText[langueActu]}</button>
+            <div class="video-container">
+                <iframe id="youtube-video" width="560" height="315" 
+                        src="https://www.youtube.com/embed/0e3GPea1Tyg?cc_lang_pref=${langueActu}&cc_load_policy=1" 
+                        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    `;
+}
+
+window.onpopstate = function(event) {
+    if (event.state && event.state.page === 'cv') {
+        afficheCV(event.state.langue);
+    } else if (event.state && event.state.page === 'home') {
+        langueActu = event.state.langue;
+        chargePageAcc();
+    } else {
+        chargePageAcc();
+    }
+};
+
 document.addEventListener("DOMContentLoaded", function() {
-    changeLanguage('fr');
+    const urlParams = new URLSearchParams(window.location.search);
+    const langue = urlParams.get('langue') || 'fr';
+    langueActu = langue;
+    history.replaceState({page: 'home', langue: langue}, 'Portfolio de Marc LIU', `?langue=${langue}`);
+    chargePageAcc();
 });

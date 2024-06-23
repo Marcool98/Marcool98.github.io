@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv>
+    <info_perso>
+        <nom>Marc LIU</nom>
+        <tel>07 69 93 99 87</tel>
+        <mail>liumarc98@gmail.com</mail>
+        <age>21 ans</age>
+        <adresse>9 rue du faubourg Saint-Denis, Paris, France</adresse>
+    </info_perso>
+    <metier>
+        <titre>Ingénieur DevOps en apprentissage</titre>
+        <contrat>Contrat d'apprentissage</contrat>
+        <rythme>1 mois entreprise/ 1 mois école</rythme>
+        <dispo>Disponibilité immédiate</dispo>
+    </metier>
+    <competences>
+        <hard>HTML CSS, Javascript, Web sémantique</hard>
+        <langues>Français, Anglais, Chinois</langues>
+        <soft>Rigoureux, curieux et autonome</soft>
+    </competences>
+    <linkedin>
+        <url>https://www.linkedin.com/in/marc-liu-702941236/</url>
+    </linkedin>
+    <interet>
+        <interet>Musculation, Jeux Videos</interet>
+    </interet>
+</cv>

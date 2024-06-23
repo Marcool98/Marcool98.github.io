@@ -1,0 +1,76 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.drapeaux {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.drapeaux img {
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+.drapeaux img:hover {
+    transform: scale(1.1);
+}
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.container {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+.video-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+iframe {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.flag {
+    float: right;
+    margin-left: 10px;
+    width: 30px;
+    height: auto;
+}

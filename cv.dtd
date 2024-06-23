@@ -1,0 +1,27 @@
+<!ELEMENT cv (info_perso, metier, competences, linkedin, interet)>
+<!ATTLIST cv lang NMTOKEN #REQUIRED>
+
+<!ELEMENT info_perso (nom, tel, mail, age, adresse)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT mail (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT adresse (#PCDATA)>
+
+<!ELEMENT metier (titre, contrat, rythme, dispo)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT contrat (#PCDATA)>
+<!ELEMENT rythme (#PCDATA)>
+<!ELEMENT dispo (#PCDATA)>
+
+<!ELEMENT competences (hard, langues, soft)>
+<!ELEMENT hard (#PCDATA)>
+<!ELEMENT langues (#PCDATA)>
+<!ELEMENT soft (#PCDATA)>
+
+<!ELEMENT linkedin (url)>
+<!ELEMENT url (#PCDATA)>
+
+<!ELEMENT interet (interet)>
+<!ELEMENT interet (#PCDATA)>
+    
