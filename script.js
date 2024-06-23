@@ -45,9 +45,9 @@ var titleText = {
 'zh': '马克·刘的作品集'
 };
 var welcomeText = {
-'fr': 'Bienvenue sur mon portfolio. Cliquez ci-dessous pour afficher mon CV :',
-'en': 'Welcome to my portfolio. Click below to view my CV:',
-'zh': '欢迎访问我的作品集。点击下方查看我的简历：'
+'fr': 'Bienvenue sur mon portfolio.Pour voir mon CV, cliquez ci dessous :',
+'en': 'Welcome to my portfolio. To view my resume, click below:',
+'zh': '欢迎访问我的作品集。要查看我的简历，请点击下方：'
 };
 var buttonText = {
 'fr': 'Voir le CV',
