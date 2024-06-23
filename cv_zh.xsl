@@ -5,13 +5,14 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>CV de Marc LIU</title>
+                <title>马克·刘的简历</title> 
                  <style>
                     body {
                         font-family: Arial, sans-serif;
                         line-height: 1.6;
                         margin: 20px;
                         padding: 0;
+                        background-color: #add8e6; 
                     }
                     h1 {
                         text-align: center;
@@ -41,73 +42,73 @@
                 </style>
             </head>
             <body>
-                <h1>CV de Marc LIU</h1>
+                <h1>马克·刘的简历</h1> 
                 <table>
                     <tr>
-                        <th colspan="2">Informations Personnelles</th>
+                        <th colspan="2">个人信息</th> 
                     </tr>
                     <tr>
-                        <td>Nom</td>
+                        <td>名字</td>
                         <td><xsl:value-of select="cv/info_perso/nom"/></td>
                     </tr>
                     <tr>
-                        <td>Téléphone</td>
+                        <td>电话</td> 
                         <td><xsl:value-of select="cv/info_perso/tel"/></td>
                     </tr>
                     <tr>
-                        <td>Email</td>
+                        <td>电子邮件</td>
                         <td><xsl:value-of select="cv/info_perso/mail"/></td>
                     </tr>
                     <tr>
-                        <td>Âge</td>
+                        <td>年龄</td> 
                         <td><xsl:value-of select="cv/info_perso/age"/></td>
                     </tr>
                     <tr>
-                        <td>Adresse</td>
+                        <td>地址</td> 
                         <td><xsl:value-of select="cv/info_perso/adresse"/></td>
                     </tr>
                     
                     <tr>
-                        <th colspan="2">Objectif</th>
+                        <th colspan="2">目标</th> 
                     </tr>
                     <tr>
-                        <td>Titre</td>
+                        <td>标题</td> 
                         <td><xsl:value-of select="cv/metier/titre"/></td>
                     </tr>
                     <tr>
-                        <td>Contrat</td>
+                        <td>合同</td> 
                         <td><xsl:value-of select="cv/metier/contrat"/></td>
                     </tr>
                     <tr>
-                        <td>Rythme</td>
+                        <td>工作节奏</td> 
                         <td><xsl:value-of select="cv/metier/rythme"/></td>
                     </tr>
                     <tr>
-                        <td>Disponibilité</td>
+                        <td>可用性</td>
                         <td><xsl:value-of select="cv/metier/dispo"/></td>
                     </tr>
                     
                     <tr>
-                        <th colspan="2">Compétences</th>
+                        <th colspan="2">技能</th> 
                     </tr>
                     <tr>
-                        <td>Compétences Techniques</td>
+                        <td>技术技能</td> 
                         <td><xsl:value-of select="cv/competences/hard"/></td>
                     </tr>
                     <tr>
-                        <td>Langues</td>
+                        <td>语言</td>
                         <td><xsl:value-of select="cv/competences/langues"/></td>
                     </tr>
                     <tr>
-                        <td>Compétences Comportementales</td>
+                        <td>软技能</td> 
                         <td><xsl:value-of select="cv/competences/soft"/></td>
                     </tr>
                     
                     <tr>
-                        <th colspan="2">Centres d'Intérêt</th>
+                        <th colspan="2">兴趣爱好</th> 
                     </tr>
                     <tr>
-                        <td>Centres d'Intérêt</td>
+                        <td>兴趣爱好</td> 
                         <td><xsl:value-of select="cv/interet/interet"/></td>
                     </tr>
                     
@@ -116,7 +117,7 @@
                     </tr>
                     <tr>
                         <td>LinkedIn</td>
-                        <td><a href="{cv/linkedin/url}"><xsl:value-of select="cv/linkedin/url"/></a></td>
+                        <td><a href="{cv/linkedin/url}" class="linkedin-link"><xsl:value-of select="cv/linkedin/url"/></a></td>
                     </tr>
                 </table>
             </body>
