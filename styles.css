@@ -9,7 +9,7 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    background-color: lightskyblue;
+    background-color: #87CEFA;
 }
 h1 {
     color: #333;
@@ -60,7 +60,7 @@ button:hover {
     width: 80%;
     max-width: 800px;
     text-align: center;
-    background-color: lightblue;
+    background-color: #87CEFA;
 }
 .video-container {
     margin-top: 30px;
